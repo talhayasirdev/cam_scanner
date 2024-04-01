@@ -1,6 +1,6 @@
-name: flutter_document_scanner
-description: A Flutter plugin that allows the management of taking, cropping and applying filters to an image, using the camera plugin
-repository: https://github.com/criistian14/flutter_document_scanner/tree/master/flutter_document_scanner
+name: flutter_document_scanner_android
+description: Android implementation of the flutter_document_scanner plugin
+repository: https://github.com/criistian14/flutter_document_scanner/tree/master/flutter_document_scanner_android
 version: 1.1.0
 
 environment:
@@ -9,30 +9,21 @@ environment:
 
 flutter:
   plugin:
+    implements: flutter_document_scanner
     platforms:
       android:
-        default_package: flutter_document_scanner_android
-      ios:
-        default_package: flutter_document_scanner_ios
+        package: com.christian.flutterDocumentScanner
+        pluginClass: FlutterDocumentScannerPlugin
+        dartPluginClass: FlutterDocumentScannerAndroid
 
 dependencies:
   flutter:
     sdk: flutter
-  bloc: ^8.0.3
-  camera: ^0.10.5+5
-  equatable: ^2.0.3
-  flutter_bloc: ^8.0.1
-  flutter_document_scanner_android:
-    path: ../flutter_document_scanner_android
-  flutter_document_scanner_ios:
-    path: ../flutter_document_scanner_ios
   flutter_document_scanner_platform_interface:
     path: ../flutter_document_scanner_platform_interface
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mocktail: ^0.3.0
   plugin_platform_interface: ^2.0.0
   very_good_analysis: ^3.0.1
-  bloc_test: ^9.0.3
